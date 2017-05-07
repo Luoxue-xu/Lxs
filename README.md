@@ -8,8 +8,8 @@ webpack2.x + es6 + react + scss
 
 config文件夹是webpack的配置文件
 ```
-dev.js 是开发环境的配置文件
-prod.js 是生产环境的配置文件
+dev.js // 是开发环境的配置文件
+prod.js // 是生产环境的配置文件
 ```
 
 ### 启动
