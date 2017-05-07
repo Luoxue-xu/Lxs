@@ -1,0 +1,52 @@
+{
+  "name": "love",
+  "version": "1.0.0",
+  "description": "my loves",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --env=dev",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:dist": "webpack --env=prod --progress --profile --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Luoxue-xu/Love.git"
+  },
+  "keywords": [
+    "love",
+    "edit"
+  ],
+  "author": "https://github.com/Luoxue-xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luoxue-xu/Love/issues"
+  },
+  "homepage": "https://github.com/Luoxue-xu/Love#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.2",
+    "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.7"
+  }
+}
