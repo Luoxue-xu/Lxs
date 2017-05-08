@@ -2,7 +2,7 @@
 
 由webpack1.x 升级到webpack2.x的前端自动化构建配置
 
-webpack2.x + es6 + react + scss
+webpack2.x + es6 + react + react-router-dom + scss
 
 ### 说明
 
@@ -55,6 +55,10 @@ npm build:dist
 构建生产环境代码会自动打包，其中 react react-dom 会独立打包，独立引用，同时多个模块引用的公共模块也会独立打包.
 
 暂时没有添加图片的处理，后续会添加，图片处理的 loader 和其他的类似，参考[file-loader](https://doc.webpack-china.org/loaders/file-loader/)
+
+### 关于 react-router-dom 的使用，才可以参考下面的文档
+
+[react-router-dom](https://reacttraining.cn/)
 
 ### 备注
 
