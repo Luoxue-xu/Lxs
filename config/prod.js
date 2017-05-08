@@ -18,12 +18,15 @@ module.exports = function() {
             rules: [{
                     test: /\.scss$/,
                     use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
                         use: [{
                                 loader: 'css-loader',
                                 options: {
-                                    modules: true
+                                    modules: true,
+                                    importLoaders: 1
                                 }
                             },
+                            'postcss-loader',
                             'sass-loader'
                         ]
                     })
@@ -48,10 +51,7 @@ module.exports = function() {
             new ExtractTextPlugin('styles.css'),
             new webpack.optimize.CommonsChunkPlugin({ // 打包公共库
                 names: ['vendor'],
-                minChunks: function(module) {
-                    // 只打包来自node_modules的库
-                    return module.context && module.context.indexOf('node_modules') !== -1;
-                }
+                minChunks: 4 // 满足多少个模块代码之后才会提取公共代码
             }),
             new HtmlWebpackPlugin({
                 template: './src/template/index.html'

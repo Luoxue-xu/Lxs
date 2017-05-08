@@ -1,0 +1,15 @@
+@import './mixin/mixin';
+@import './mixin/variable';
+
+.main {
+    display: flex;
+    flex-direction: row;
+    background: red;
+}
+
+// 小屏幕下竖屏展示
+@media screen and (max-width: 800px) {
+    .main {
+        flex-direction: column;
+    }
+}

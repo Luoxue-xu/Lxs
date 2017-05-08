@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import 'babel-polyfill';
 import { AppContainer } from 'react-hot-loader';
-import Index from './js/Index';
-import './css/index/index.scss';
-
-
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import Index from './js/index';
 
 const render = (Component) => {
     ReactDOM.render(
         <AppContainer>
             <Component />
         </AppContainer>,
-        document.querySelector('#wrapper')
+        document.querySelector('#page')
     );
 }
 
 render(Index);
 
 if (module.hot) {
-  module.hot.accept('./js/Index', () => {
+  module.hot.accept('./js/index', () => {
     render(Index);
   });
 }

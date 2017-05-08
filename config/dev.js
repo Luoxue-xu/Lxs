@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function() {
@@ -42,9 +43,11 @@ module.exports = function() {
                         {
                             loader: 'css-loader',
                             options: {
-                                modules: true
+                                modules: true,
+                                importLoaders: 1
                             }
                         },
+                        'postcss-loader',
                         'sass-loader'
                     ]
                 },

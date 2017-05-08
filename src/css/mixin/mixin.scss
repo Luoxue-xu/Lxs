@@ -1,0 +1,32 @@
+// 设置尺寸
+@mixin size($width, $height: $width) {
+    width : $width;
+    height: $height;
+}
+// 定位
+@mixin position($pos: relative, $top: auto, $right: auto, $bottom: auto, $left: auto, $zindex: 0) {
+    position: $pos;
+    right   : $right;
+    bottom  : $bottom;
+    left    : $left;
+    top     : $top;
+    z-index : $zindex;
+}
+// 文本
+@mixin font($size: .16rem, $color: rgba(31, 31, 31, 1), $lh: 1, $ta: left, $weight: normal) {
+    font-size  : $size;
+    color      : $color;
+    line-height: $lh;
+    text-align : $ta;
+    font-weight: $weight;
+}
+
+// icon
+@mixin icon($name, $position, $active: 0 0) {
+    &.#{$name}-icon {
+        background-position: $position;
+        &.active {
+            background-position: $active;
+        }
+    }
+}

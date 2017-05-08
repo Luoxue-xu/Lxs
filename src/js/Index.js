@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import '../css/base/reset.scss';
 
-const index = (props) => (
-    <header>
-        {props.title}
-    </header>
-);
+import Main from './main';
+import mainStyle from '../css/main.scss';
 
-export default index;
+import Header from './header';
+class Index extends Component {
+
+    render() {
+        return (
+            <Router>
+              <div className={mainStyle.main}>
+                <Header />
+                <Main />
+              </div>
+            </Router>
+        );
+    }
+
+}
+
+export default Index;
