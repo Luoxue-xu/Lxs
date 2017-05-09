@@ -56,7 +56,7 @@ npm build:dist
 
 暂时没有添加图片的处理，后续会添加，图片处理的 loader 和其他的类似，参考[file-loader](https://doc.webpack-china.org/loaders/file-loader/)
 
-### 关于 react-router-dom 的使用，才可以参考下面的文档
+### 关于 react-router-dom 的使用，参考下面的文档
 
 [react-router-dom](https://reacttraining.cn/)
 
