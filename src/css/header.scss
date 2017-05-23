@@ -4,6 +4,9 @@
 .header {
     flex: 2rem 0 0;
     background: $module-bg-color;
+    li {
+        font-size: .12rem;
+    }
 }
 
 .navbar {

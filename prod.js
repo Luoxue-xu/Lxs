@@ -2,18 +2,29 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = function() {
     return {
         entry: {
             index: './src/app.js',
-            vendors: ['react', 'react-dom']
+            user: './src/user.js'
         },
         output: {
-            path: path.join(__dirname, '/../dist'),
+            path: path.join(__dirname, '/dist'),
             filename: '[name].[chunkhash].js',
-            chunkFilename: '[id]-[chunkhash].js',
-            publicPath: '/'
+            chunkFilename: '[name]-[chunkhash].js',
+            publicPath: './'
+        },
+        devServer: {
+            contentBase: './dist', // 服务器根目录
+            historyApiFallback: true, // 返回是否不跳转
+            inline: true, // 是否实时刷新
+            port: 8019, // 端口号 默认是8080
+            hot: true,
+            stats: {
+                colors: true
+            }
         },
         module: {
             rules: [{
@@ -48,15 +59,33 @@ module.exports = function() {
                 }
             ]
         },
+        externals: {
+            'react': 'React',
+            'react-dom': 'ReactDOM'
+        },
         plugins: [
-            new ExtractTextPlugin('styles.css'),
+            new CleanWebpackPlugin(['dist']),
+            new ExtractTextPlugin({
+                filename: '[name].[contenthash:8].bundle.css',
+                allChunks: true,
+            }),
             new webpack.optimize.CommonsChunkPlugin({ // 打包公共库
                 names: ['vendor'],
                 minChunks: 4 // 满足多少个模块代码之后才会提取公共代码
             }),
             new HtmlWebpackPlugin({
-                template: './src/template/index.html'
-                // chunks: [] // 文件需要引用哪些js文件
+                template: './src/template/index.html',
+                title: '首页',
+                hash: true,
+                filename: 'index.html',
+                chunks: ['vendor', 'index']
+            }),
+            new HtmlWebpackPlugin({
+                template: './src/template/index.html',
+                title: '会员中心',
+                hash: true,
+                filename: 'user.html',
+                chunks: ['vendor', 'user']
             }),
             new webpack.LoaderOptionsPlugin({
                 minimize: true,

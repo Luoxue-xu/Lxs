@@ -10,7 +10,7 @@ module.exports = function() {
             'react-hot-loader/patch',
             // 开启 React 代码的模块热替换(HMR)
 
-            'webpack-dev-server/client?http://localhost:8099',
+            'webpack-dev-server/client?http://localhost:8016',
             // 为 webpack-dev-server 的环境打包代码
             // 然后连接到指定服务器域名与端口
 
@@ -23,13 +23,14 @@ module.exports = function() {
             path: path.join(__dirname, '/../build'),
             filename: '[name].js',
             publicPath: '/',
-            sourceMapFilename: '[name].map'
+            sourceMapFilename: '[name].map',
+            chunkFilename: '[id]-[chunkhash].js'
         },
         devServer: {
             contentBase: './build', // 服务器根目录
             historyApiFallback: true, // 返回是否不跳转
             inline: true, // 是否实时刷新
-            port: 8099, // 端口号 默认是8080
+            port: 8016, // 端口号 默认是8080
             hot: true,
             stats: {
                 colors: true
@@ -65,6 +66,10 @@ module.exports = function() {
                     }
                 }
             ]
+        },
+        externals: {
+            'react': 'React',
+            'react-dom': 'ReactDOM'
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(), //热加载插件

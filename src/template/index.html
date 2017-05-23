@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>首页</title>
+	<meta charset='UTF-8'>
+	<!-- 通过配置文件生成title -->
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<!-- 可以在这里引入其他样式文件，业务css会自动生成在下方 -->
 </head>
 <body>
-<div id="page"></div>
+
+	<div id='page'></div>
+
+	<!-- CDN加载第三方库 -->
+	<script src="https://as.alipayobjects.com/g/component/react/15.2.0/react.min.js" type="text/javascript"></script>
+	<script src="https://as.alipayobjects.com/g/component/react/15.2.0/react-dom.min.js" type="text/javascript"></script>
+	<!-- 业务js代码自动生成在下方 -->
 </body>
 </html>
