@@ -98,12 +98,14 @@ module.exports = function() {
             }),
             new webpack.optimize.UglifyJsPlugin({
                 beautify: false,
+                minimize: true,
                 mangle: {
                     screw_ie8: true,
                     keep_fnames: true
                 },
                 compress: {
-                    screw_ie8: true
+                    screw_ie8: true,
+                    warnings: false
                 },
                 comments: false
             })
