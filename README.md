@@ -1,15 +1,15 @@
 # Lxs
 
-由webpack1.x 升级到webpack2.x的前端自动化构建配置
+基于webpack4.x的前端自动化构建配置
 
-webpack2.x + es6 + react + react-router-dom + scss
+webpack4.x + es6 + react + react-router-dom + scss
 
 ### 说明
 
-config文件夹是webpack的配置文件
 ```
-dev.js // 是开发环境的配置文件
-prod.js // 是生产环境的配置文件
+webpack.config.js // 最初配置，忽略
+webpack.dev.js // 是开发环境的配置文件
+webpack.pro.js // 是生产环境的配置文件
 ```
 
 ### 启动
@@ -17,6 +17,9 @@ prod.js // 是生产环境的配置文件
 ```
 npm start
 ```
+
+
+### 热替换还没加
 
 启动之后支持热更新，无需刷新页面，便能替换、增加、删除必要的模块。
 
@@ -49,12 +52,10 @@ if (module.hot) {
 ### 构建生产环境代码
 
 ```
-npm build:dist
+npm run build
 ```
 
-构建生产环境代码会自动打包，其中 react react-dom 会独立打包，独立引用，同时多个模块引用的公共模块也会独立打包.
-
-暂时没有添加图片的处理，后续会添加，图片处理的 loader 和其他的类似，参考[file-loader](https://doc.webpack-china.org/loaders/file-loader/)
+构建生产环境代码会自动打包，其中 react react-dom 默认是引用第三方CDN服务，同时多个模块引用的公共模块也会独立打包.
 
 ### 关于 react-router-dom 的使用，参考下面的文档
 
