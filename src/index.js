@@ -7,6 +7,11 @@ const MyEquip = asyncComponent(() => import('@/containers/MyEquip'))
 const GetRedPackets = asyncComponent(() => import('@/containers/GetRedPackets'))
 import 'csses/index.scss'
 
+const setName = target => {
+    target.age = 'luoxue'
+}
+
+@setName
 class App extends Component {
 
     constructor() {

@@ -70,7 +70,8 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     presets: ['@babel/preset-env', '@babel/preset-react'],
-                    plugins: ['@babel/plugin-syntax-dynamic-import', ['@babel/plugin-transform-runtime', {
+                    // @babel/plugin-proposal-decorators 添加修饰器支持
+                    plugins: [["@babel/plugin-proposal-decorators", { "legacy": true }], '@babel/plugin-syntax-dynamic-import', ['@babel/plugin-transform-runtime', {
                         'corejs': false,
                         'helpers': false,
                         'regenerator': true,
