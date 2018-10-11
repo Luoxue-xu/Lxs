@@ -1,0 +1,49 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style-type: none;
+}
+html {
+    font-size: 625%;
+}
+body {
+    font-size: .16rem;
+}
+.redpackets {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 2.4rem;
+    height: 4rem;
+    transform: translate(-50%, -50%);
+    background: #eee;
+    border-radius: .12rem;
+    .redpackets-btn {
+        position: absolute;
+        top: 1.2rem;
+        left: 50%;
+        width: .56rem;
+        height: .56rem;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 1);
+        text-align: center;
+        line-height: .56rem;
+        font-size: .2rem;
+        color: #999;
+        font-weight: 200;
+    }
+    .redpackets-list {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: .12rem;
+        height: 2rem;
+        background: #ccc;
+        border-radius: 0 0 .12rem .12rem;
+        overflow-y: auto;
+    }
+}
