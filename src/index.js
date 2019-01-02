@@ -1,17 +1,13 @@
 // import '@babel/polyfill'
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import ReactDOM from 'react-dom'
 import asyncComponent from '@/utils/asyncComponent'
 
-const MyEquip = asyncComponent(() => import('@/containers/MyEquip'))
-const GetRedPackets = asyncComponent(() => import('@/containers/GetRedPackets'))
+// const LxSwiper = asyncComponent(() => import(/* webpackChunkName: "lxwiper" */ '@/components/LxSwiper'))
+import Laboratory from 'containers/Laboratory'
+import '@/utils/array'
 import 'csses/index.scss'
 
-const setName = target => {
-    target.age = 'luoxue'
-}
-
-@setName
 class App extends Component {
 
     constructor() {
@@ -20,9 +16,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className='lxui'>
-                123
-            </div>
+            <Laboratory />
         )
     }
 

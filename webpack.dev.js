@@ -63,7 +63,7 @@ module.exports = {
             test: /\.(js|jsx)$/,
             exclude: /(node_modules|bower_components)/,
             // 8.0版本安装方式 npm install babel-loader@8.0.0-beta.0 @babel/core @babel/preset-env webpack
-            use: {
+            use: [{
                 loader: 'babel-loader',
                 options: {
                     presets: ['@babel/preset-env', ['@babel/preset-react', {
@@ -76,7 +76,7 @@ module.exports = {
                         'useESModules': false
                     }]]
                 }
-            }
+            }]
         }, {
             test: /\.html$/,
             use: ['html-loader']
